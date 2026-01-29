@@ -188,3 +188,89 @@ class KucukSinif(Sinif):
 #__metot__ Private
 #_metot_   Protected
 #metot     Public
+#-------------VİDEO 107------------
+#Abstract Class (Soyut Sınıf)
+from abc import ABC,abstractmethod
+
+class  Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+    @abstractmethod
+    def perimeter(self):
+        pass
+
+#Abstract Classı genel olarak yazılımcıları yönlendirmek içindir. Oluşturulacak olan 
+#Child Class'lara metot ismi konusunda bir şablon gösterir.
+#-------------VİDEO 110------------
+#İçiçe Class'lar
+
+class Car:
+    pass
+
+    def __init__(self,a,b,aa,bb):
+        self.engine=Car.Engine(aa,bb)
+
+    def show_details(self):
+        print(self.engine.show_engine)
+
+    class Engine:
+        def __init__(self, a, b):
+            self.deneme1=a
+            self.deneme2=b
+        def show_engine(self):
+            return self.deneme1+self.deneme2
+#-------------VİDEO 111------------
+#Class Metodu
+
+class Person:
+    def __init__(self, age, name):
+        self.age=age
+        self.name=name
+
+    @classmethod #Class'tan bir nesne oluşturmadan direkt olarak kullanmamızı sağlıyor.
+    def birth_year(year,name):
+        calculated_age=2026-year
+
+        return Person(calculated_age,name)
+    
+    #instance method
+    def display_info(self):
+        print(f"{self.name}, {self.age} yaşındadır.")
+
+p1=Person.birth_year(1990,"Hümeyra")
+print(p1.display_info())
+#-------------VİDEO 112------------
+#Getter Setter ve Deleter
+
+class Name:
+    def __init__(self,name):
+        self.name=name
+
+    def get_name(self): #Getter Method
+        return self.name
+    
+    def set_name(self,new_name): #Setter Method
+        self.name=new_name
+
+    def delete_name(self):
+        self.name=None
+
+
+def newMethod(self):
+    print("New method added!")
+class newClass:
+    pass
+
+newClass.newMethod=newMethod() #Dışardan method ekledik. 
+#-------------VİDEO 118------------
+#Try ve Except Kullanımı
+
+try:
+    print(time)
+    
+except NameError:
+    print("Variable time is not defined.")
+#-------------VİDEO 129------------
+#JSON Kullanımı
+
